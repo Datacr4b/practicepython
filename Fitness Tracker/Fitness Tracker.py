@@ -2,52 +2,62 @@
 # Fitness tracker.py - Program to calculate your total time and store data. WIP
 #
 
+class Workout:
+
+    total = 0
+
+    def __init__(self, name, time_spent, date):
+        self.name = name
+        self.time_spent = time_spent
+        self.date = date
+
+        Workout.total += 1
+
+    def showdata(self):
+        return f'Time spent on {self.name} is {self.time_spent} min on {self.date}'
+
+
 # Variable Statements
 total_time = 0 # statement for the program
 current_data = 'a'
-data_dict = {} # dictionary for the fitness data
+class_list = [] # list for the workout instances
 
 # TODO: ASK TO REMOVE DATA OR SPECIFIC DATA
 # TODO: PANDAS
 
 # Question loop - ask for info input
 while True:
-    exercise = input("Type the exercise that you've done today (type q to quit): ")
-    if exercise.lower() == 'q':
+    name = input("Type the exercise that you've done today (type q to quit): ")
+    if name.lower() == 'q':
         break
     time_spent = input("Type the time spent on the exercise in minutes (type q to quit): ")
     if time_spent.lower() == 'q':
         break
-    date_exercise = input("Type the date of the exercise (type q to quit): ")
-    if date_exercise.lower() == 'q':
+    date = input("Type the date of the exercise (type q to quit): ")
+    if date.lower() == 'q':
         break
-    # NOTE DOWN DATA IN FILE IN DICT FORMAT FOR EASY ACCESS
-    file = open("Fitness.txt", 'a')
-    file.write(f'{date_exercise},{exercise},{time_spent},\n')
-    file.close()
 
-# OPEN FILE IN READ AND PUT DATA IN DICT
-file = open("Fitness.txt", 'r')
-for line in file.readlines():
-    line_list=line.split(',')
-    if line_list[0].lower() == current_data[0].lower():
-        data_dict[current_data[0]].append(line_list[1])
-        data_dict[current_data[0]].append(line_list[2])
-        current_data = line_list
-    else:
-        current_data = line_list
-        data_dict[line_list[0]] = [line_list[1],line_list[2]]
+    # NOTE DOWN DATA IN FILE
+    with open("Fitness.txt", 'a') as file:
+        file.write(f'{name},{time_spent},{date},\n')
 
-file.close()
+# OPEN FILE IN READ AND PUT DATA IN OBJECT INSTANCE
+with open("Fitness.txt", 'r') as file:
+    for line in file.readlines():
+        object_inst=line.split(',')
+
+        # INITIATE INSTANCE
+        workout = Workout(object_inst[0], int(object_inst[1]), object_inst[2])
+        class_list.append(workout) # PUT ALL OBJECTS IN LIST
 
 # CALCULATE THE TOTAL TIME SPENT
-for time in data_dict.values():
-    for k in range(0,len(time),2):
-        total_time += int(time[k+1])
+for i in range(0,len(class_list)):
+    total_time += class_list[i].time_spent
 
-# SHOW TIME FOR EVERY EXERCISE
-for exercise, time_and_date in data_dict.items():
-    print(f'Time spent on {exercise} is {time_and_date[0]} min on {time_and_date[1]}')
+# SHOW TIME AND DATE FOR EVERY WORKOUT
+for i in range(0,len(class_list)):
+    print(class_list[i].showdata())
 
 print(f'Here is the total time spent on all exercises : {total_time} min')
+print(f'Total Workouts {Workout.total}')
 
