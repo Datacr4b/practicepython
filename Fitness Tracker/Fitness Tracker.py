@@ -2,9 +2,9 @@
 # Fitness tracker.py - Program to calculate your total time and store data. WIP
 #
 
-
 # Variable Statements
 total_time = 0 # statement for the program
+current_data = 'a'
 data_dict = {} # dictionary for the fitness data
 
 # TODO: ASK TO REMOVE DATA OR SPECIFIC DATA
@@ -30,7 +30,7 @@ while True:
 file = open("Fitness.txt", 'r')
 for line in file.readlines():
     line_list=line.split(',')
-    if line_list[0].lower == current_data[0].lower:
+    if line_list[0].lower() == current_data[0].lower():
         data_dict[current_data[0]].append(line_list[1])
         data_dict[current_data[0]].append(line_list[2])
         current_data = line_list
