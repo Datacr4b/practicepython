@@ -1,6 +1,9 @@
 #
 # Fitness tracker.py - Program to calculate your total time and store data. WIP
 #
+import pandas as pd # Naming convention
+import os
+os.chdir('Desktop/Tortoise/Fitness Tracker/') # Get to path 
 
 class Workout:
 
@@ -14,7 +17,7 @@ class Workout:
         Workout.total += 1
 
     def showdata(self):
-        return f'Time spent on {self.name} is {self.time_spent} min on {self.date}'
+        return f"Time spent on {self.name} is {self.time_spent} min on {self.date}"
 
 
 # Variable Statements
@@ -38,17 +41,19 @@ while True:
         break
 
     # NOTE DOWN DATA IN FILE
-    with open("Fitness.txt", 'a') as file:
-        file.write(f'{name},{time_spent},{date},\n')
+    with open("Fitness.csv", 'a') as file:
+        file.write(f'{name},{time_spent},{date}\n')
 
 # OPEN FILE IN READ AND PUT DATA IN OBJECT INSTANCE
-with open("Fitness.txt", 'r') as file:
+with open("Fitness.csv", 'r') as file:
     for line in file.readlines():
         object_inst=line.split(',')
-
-        # INITIATE INSTANCE
-        workout = Workout(object_inst[0], int(object_inst[1]), object_inst[2])
-        class_list.append(workout) # PUT ALL OBJECTS IN LIST
+        if object_inst[0] == 'EXERCISE' and object_inst[1] == 'TIME SPENT':
+            continue # VERIFY IF NOT HEADLINE
+        else:
+            # INITIATE INSTANCE
+            workout = Workout(object_inst[0], int(object_inst[1]), object_inst[2][:-1])
+            class_list.append(workout) # PUT ALL OBJECTS IN LIST
 
 # CALCULATE THE TOTAL TIME SPENT
 for i in range(0,len(class_list)):
@@ -58,6 +63,8 @@ for i in range(0,len(class_list)):
 for i in range(0,len(class_list)):
     print(class_list[i].showdata())
 
-print(f'Here is the total time spent on all exercises : {total_time} min')
+df = pd.read_csv("Fitness.csv") # read the data file
+
+print(f'Here is the total time spent on all exercises : {df['TIME SPENT'].sum()} min')
 print(f'Total Workouts {Workout.total}')
 

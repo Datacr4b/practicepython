@@ -1,4 +1,0 @@
-jogging,50,march 12th,
-workout,30,march 13th,
-swimming,40,march 14th,
-jogging,50,march 14th,
