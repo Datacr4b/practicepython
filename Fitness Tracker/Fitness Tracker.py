@@ -44,6 +44,8 @@ while True:
     with open("Fitness.csv", 'a') as file:
         file.write(f'{name},{time_spent},{date}\n')
 
+df = pd.read_csv("Fitness.csv") # read the data file
+
 # OPEN FILE IN READ AND PUT DATA IN OBJECT INSTANCE
 with open("Fitness.csv", 'r') as file:
     for line in file.readlines():
@@ -55,16 +57,18 @@ with open("Fitness.csv", 'r') as file:
             workout = Workout(object_inst[0], int(object_inst[1]), object_inst[2][:-1])
             class_list.append(workout) # PUT ALL OBJECTS IN LIST
 
-# CALCULATE THE TOTAL TIME SPENT
-for i in range(0,len(class_list)):
-    total_time += class_list[i].time_spent
-
-# SHOW TIME AND DATE FOR EVERY WORKOUT
-for i in range(0,len(class_list)):
-    print(class_list[i].showdata())
-
-df = pd.read_csv("Fitness.csv") # read the data file
+filter_num = int(input("Time Spent filter above which number? (0 to ignore): "))
+if filter_num != 0:
+    filter_df = df.loc[df['TIME SPENT'] > filter_num]
+else:
+    filter_num = int(input("Time Spent filter below which number? (0 to ignore): "))
+    if filter_num != 0:
+        filter_df = df.loc[df['TIME SPENT'] < filter_num]
+    else:
+        filter_df = df.loc[df['TIME SPENT'] > filter_num]
+print(filter_df)
 
 print(f'Here is the total time spent on all exercises : {df['TIME SPENT'].sum()} min')
-print(f'Total Workouts {Workout.total}')
+print(f'Here is the total time spent on all filtered exercises : {filter_df['TIME SPENT'].sum()} min')
+print(f'Total Workouts : {Workout.total}')
 
