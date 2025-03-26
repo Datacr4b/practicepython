@@ -1,0 +1,14 @@
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\bin\Debug\net8.0\ForIteration.exe
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\bin\Debug\net8.0\ForIteration.deps.json
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\bin\Debug\net8.0\ForIteration.runtimeconfig.json
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\bin\Debug\net8.0\ForIteration.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\bin\Debug\net8.0\ForIteration.pdb
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.AssemblyInfoInputs.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.AssemblyInfo.cs
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.csproj.CoreCompileInputs.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\refint\ForIteration.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.pdb
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ForIteration.genruntimeconfig.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\ForIteration\obj\Debug\net8.0\ref\ForIteration.dll

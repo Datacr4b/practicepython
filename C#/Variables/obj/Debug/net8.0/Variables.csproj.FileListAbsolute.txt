@@ -1,0 +1,14 @@
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\bin\Debug\net8.0\Variables.exe
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\bin\Debug\net8.0\Variables.deps.json
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\bin\Debug\net8.0\Variables.runtimeconfig.json
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\bin\Debug\net8.0\Variables.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\bin\Debug\net8.0\Variables.pdb
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.AssemblyInfoInputs.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.AssemblyInfo.cs
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.csproj.CoreCompileInputs.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\refint\Variables.dll
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.pdb
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\Variables.genruntimeconfig.cache
+C:\Users\julia.menshikov\Desktop\Tortoise\C#\Variables\obj\Debug\net8.0\ref\Variables.dll
